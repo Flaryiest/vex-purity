@@ -19,9 +19,11 @@ function updateScore() {
 
 function renderQuestions() {
   const questionsList = questions.map((question, index) => `
-    <li class="question-item" data-index="${index}">
-      <input type="checkbox" id="q${index}" data-index="${index}">
-      <label for="q${index}" class="question-text">${question}</label>
+    <li>
+      <label class="question-item" data-index="${index}">
+        <input type="checkbox" id="q${index}" data-index="${index}">
+        <span class="question-text">${question}</span>
+      </label>
     </li>
   `).join('');
 
@@ -71,17 +73,6 @@ function initializeApp() {
       } else {
         checkedCount--;
         item.classList.remove('checked');
-      }
-    });
-  });
-
-  // Add click event to question items
-  const questionItems = document.querySelectorAll('.question-item');
-  questionItems.forEach(item => {
-    item.addEventListener('click', (e) => {
-      if (e.target.tagName !== 'INPUT') {
-        const checkbox = item.querySelector('input[type="checkbox"]');
-        checkbox.click();
       }
     });
   });
