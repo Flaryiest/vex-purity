@@ -1,1 +1,2 @@
-# vex-purity
+# vex-purity  
+A VEX purity test :)
